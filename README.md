@@ -48,7 +48,7 @@ Aplicação Full Stack (SPA) para gerenciamento de leads de vendas, construída 
         ```bash
         dotnet ef database update
         ```
-        Caso o comando acima não funcione, instale e tente novamente
+        Caso o comando acima não funcione, tente instalar as Ferramentas EF
         ```bash
         dotnet tool install --global dotnet-ef
         ```
