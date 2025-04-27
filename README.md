@@ -48,6 +48,10 @@ Aplicação Full Stack (SPA) para gerenciamento de leads de vendas, construída 
         ```bash
         dotnet ef database update
         ```
+        Caso o comando acima não funcione, instale e tente novamente
+        ```bash
+        dotnet tool install --global dotnet-ef
+        ```
 
 3.  **Configure o Frontend:**
     *   Navegue até a pasta do frontend:
