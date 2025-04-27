@@ -8,7 +8,6 @@
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
     background-color: #242424; /* Cor de fundo padrão do Vite */
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -18,11 +17,10 @@
 /* Garante que o body não tenha margens estranhas */
 body {
     margin: 0;
-    /* Opcional: Se quiser centralizar verticalmente também (pode não ser ideal para listas longas) */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* min-height: 100vh; */
+    background-color: #e9ecef; /* Fundo cinza claro */
+    min-height: 100vh; /* GARANTE ALTURA MÍNIMA DA TELA */
+    display: flex; /* Ajuda a centralizar o #root se necessário */
+    flex-direction: column; /* Garante que o conteúdo flua verticalmente */
 }
 
 /* Você pode ajustar o fundo do body aqui se não quiser o padrão escuro do Vite */
@@ -34,11 +32,11 @@ body {
 
 /* Certifique-se que o container root também não interfere */
 #root {
-    /* Geralmente não precisa de estilos aqui para centralização com margin:auto */
-    /* max-width: 1280px; */ /* O template Vite pode ter isso, remova se estiver atrapalhando */
-    /* margin: 0 auto; */ /* O template Vite pode ter isso */
-    /* padding: 2rem; */ /* O template Vite pode ter isso */
-    /* text-align: center; */ /* O template Vite pode ter isso */
+    width: 100%; /* Garante que o root possa se expandir */
+    flex-grow: 1; /* Permite que o root cresça para preencher o espaço do flex container (body) */
+    display: flex; /* Usa flex para centralizar o .app-container dentro dele */
+    flex-direction: column; /* Mantém o fluxo interno vertical */
+    /* align-items: center; */ /* Descomente se quiser centralizar .app-container verticalmente também */
 }
 
 /* Outros estilos globais... */

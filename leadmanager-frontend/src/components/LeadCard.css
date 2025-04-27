@@ -1,13 +1,11 @@
-﻿body {
-}
-/* src/components/LeadCard.css */
+﻿/* src/components/LeadCard.css */
 .lead-card {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
     border-radius: 5px;
     margin-bottom: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* Para conter floats ou elementos posicionados */
+    overflow: hidden;
 }
 
 .card-header {
@@ -15,7 +13,7 @@
     align-items: center;
     padding: 15px;
     border-bottom: 1px solid #eee;
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .card-initial {
@@ -25,11 +23,12 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #007bff;
+    background-color: #FB923C; /* Laranja */
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     margin-right: 15px;
+    flex-shrink: 0;
 }
 
 .header-details {
@@ -52,16 +51,49 @@
     padding: 15px;
 }
 
-.location-info {
-    font-size: 0.9rem;
+/* Estilo para a linha de metadados (Localização | Categoria | Job ID) */
+.card-meta-info {
+    display: flex; /* Coloca os spans lado a lado */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    align-items: center; /* Alinha verticalmente */
+    gap: 5px; /* Pequeno espaço entre os itens */
+    font-size: 0.95rem;
     color: #555;
-    margin-bottom: 10px;
+    margin: 0 0 15px 0; /* Remove margem padrão do <p> e adiciona abaixo */
+    padding: 0; /* Remove padding padrão do <p> */
 }
 
-    .location-info span:not(:last-child)::after {
-        content: " | "; /* Separador */
-        margin: 0 5px;
-    }
+.meta-item {
+    display: inline-flex; /* Para alinhar ícone e texto dentro do span */
+    align-items: center;
+    white-space: nowrap; /* Evita quebrar linha dentro de um item */
+}
+
+.meta-icon {
+    margin-right: 5px; /* Espaço entre ícone e texto */
+    /* Opcional: Ajustar tamanho */
+    /* font-size: 1.1em; */
+}
+
+.meta-separator {
+    color: #ccc; /* Cor cinza claro para o separador */
+    margin: 0 5px; /* Espaçamento horizontal ao redor do separador */
+    font-weight: lighter;
+}
+
+/* REMOVER ESTILOS ANTIGOS - Não são mais usados */
+/*
+.info-line { ... }
+.info-icon { ... }
+.info-icon-placeholder { ... }
+*/
+
+/* Estilo para a linha divisória suave */
+.card-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
 
 .description {
     font-size: 1rem;
@@ -70,33 +102,29 @@
 }
 
 .contact-info {
-    margin-top: 10px;
     font-size: 0.9rem;
     color: #555;
 }
 
     .contact-info span {
         margin-right: 15px;
+        white-space: nowrap;
     }
 
-
 .card-footer {
-    background-color: #f9f9f9;
+    background-color: #fff;
     padding: 10px 15px;
     border-top: 1px solid #eee;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Empurra elementos para os lados */
+    justify-content: space-between;
+    min-height: 40px;
 }
 
-.invited-footer .price {
-    font-weight: bold;
-    color: #28a745; /* Verde para preço */
-}
-
-.accepted-footer .price {
+.price {
     font-weight: bold;
     color: #333;
+    font-size: 0.95rem;
 }
 
 .button {
@@ -105,34 +133,33 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-    margin-right: 10px; /* Espaço entre botões */
-    transition: background-color 0.2s ease;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
+    .button:last-child {
+        margin-right: 0;
+    }
+
 .accept-button {
-    background-color: #28a745; /* Verde */
+    background-color: #F97316; /* Laranja */
     color: white;
 }
 
     .accept-button:hover {
-        background-color: #218838;
+        background-color: #EA580C;
     }
 
 .decline-button {
-    background-color: #dc3545; /* Vermelho */
-    color: white;
+    background-color: #E5E7EB; /* Cinza */
+    color: #4B5563;
 }
 
     .decline-button:hover {
-        background-color: #c82333;
+        background-color: #D1D5DB;
     }
 
-/* Ajuste para o footer invited ter botões à esquerda e preço à direita */
-.invited-footer {
+.invited-footer > div:first-child {
     display: flex;
-    justify-content: space-between;
 }
-
-    .invited-footer > div:first-child { /* Container para os botões */
-        /* Não necessário com justify-content: space-between */
-    }

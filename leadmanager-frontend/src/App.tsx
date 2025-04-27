@@ -1,8 +1,8 @@
-// src/App.tsx
+ï»¿// src/App.tsx
 import { useState, useEffect, useCallback } from 'react';
 import { InvitedLead, AcceptedLead } from './types/lead';
 import * as apiService from './services/apiService';
-import LeadCard from './components/LeadCard'; // Criaremos este componente a seguir
+import LeadCard from './components/LeadCard';
 import './App.css'; // Criaremos este CSS a seguir
 
 type Tab = 'invited' | 'accepted';
@@ -14,12 +14,10 @@ function App() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
-    // Função para buscar todos os dados
     const fetchData = useCallback(async () => {
         setIsLoading(true);
         setError(null);
         try {
-            // Busca ambos os tipos de leads em paralelo
             const [invited, accepted] = await Promise.all([
                 apiService.getInvitedLeads(),
                 apiService.getAcceptedLeads()
@@ -32,30 +30,19 @@ function App() {
         } finally {
             setIsLoading(false);
         }
-    }, []); // useCallback com array de dependências vazio para não recriar a função a cada render
+    }, []);
 
-    // Busca dados ao montar o componente
     useEffect(() => {
         fetchData();
-    }, [fetchData]); // Executa quando fetchData muda (que só acontece na montagem)
+    }, [fetchData]);
 
-    // Handler para aceitar um lead
     const handleAccept = async (id: number) => {
-        // Opcional: Mostrar um estado de loading específico para o card
         try {
             await apiService.acceptLead(id);
-            // Refresca os dados para refletir a mudança
-            // Alternativa mais simples para o prazo: buscar tudo de novo
+
             fetchData();
-            // Alternativa otimizada (mais complexa):
-            // 1. Remover o lead da lista `invitedLeads`
-            // 2. Buscar *apenas* o lead aceito (precisaria de um endpoint GET /api/lead/{id})
-            // 3. Adicionar o lead buscado à lista `acceptedLeads`
-            // setInvitedLeads(prev => prev.filter(lead => lead.id !== id));
-            // // ... buscar lead aceito e adicionar a acceptedLeads ...
         } catch (err) {
             console.error(`Failed to accept lead ${id}:`, err);
-            // Mostrar erro específico para o usuário se desejado
             setError(`Failed to accept lead ${id}. Please try again.`);
         }
     };
@@ -64,10 +51,7 @@ function App() {
     const handleDecline = async (id: number) => {
         try {
             await apiService.declineLead(id);
-            // Refresca os dados (abordagem simples)
             fetchData();
-            // Alternativa otimizada: apenas remover da lista invitedLeads
-            // setInvitedLeads(prev => prev.filter(lead => lead.id !== id));
         } catch (err) {
             console.error(`Failed to decline lead ${id}:`, err);
             setError(`Failed to decline lead ${id}. Please try again.`);
@@ -105,10 +89,10 @@ function App() {
                 )}
                 {!isLoading && !error && leadsToShow.map(lead => (
                     <LeadCard
-                        key={lead.id} // Chave única para React
+                        key={lead.id}
                         lead={lead}
-                        type={activeTab} // Passa o tipo da aba para o card
-                        onAccept={activeTab === 'invited' ? handleAccept : undefined} // Passa handlers apenas para leads convidados
+                        type={activeTab}
+                        onAccept={activeTab === 'invited' ? handleAccept : undefined}
                         onDecline={activeTab === 'invited' ? handleDecline : undefined}
                     />
                 ))}
