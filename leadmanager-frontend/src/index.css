@@ -1,0 +1,44 @@
+/* src/index.css */
+/* Estilos existentes do Vite ou seus próprios */
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424; /* Cor de fundo padrão do Vite */
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Garante que o body não tenha margens estranhas */
+body {
+    margin: 0;
+    /* Opcional: Se quiser centralizar verticalmente também (pode não ser ideal para listas longas) */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* min-height: 100vh; */
+}
+
+/* Você pode ajustar o fundo do body aqui se não quiser o padrão escuro do Vite */
+body {
+    background-color: #e9ecef; /* Um cinza claro como alternativa */
+}
+
+/* Estilos padrões de botão, links etc. podem vir aqui */
+
+/* Certifique-se que o container root também não interfere */
+#root {
+    /* Geralmente não precisa de estilos aqui para centralização com margin:auto */
+    /* max-width: 1280px; */ /* O template Vite pode ter isso, remova se estiver atrapalhando */
+    /* margin: 0 auto; */ /* O template Vite pode ter isso */
+    /* padding: 2rem; */ /* O template Vite pode ter isso */
+    /* text-align: center; */ /* O template Vite pode ter isso */
+}
+
+/* Outros estilos globais... */

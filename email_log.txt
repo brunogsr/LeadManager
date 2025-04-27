@@ -1,0 +1,132 @@
+[2025-04-27 09:59:51 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 2 (Samantha)
+Body:
+Lead accepted:
+  ID: 6
+  Job ID: 2
+Name: Samantha Blue
+  Category: Plumbing
+  Suburb: Newtown 2042
+  Accepted Price: R$ 185,50
+  Description: Fix leaking kitchen tap and replace shower head
+---
+
+
+[2025-04-27 10:35:57 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 4 (Maria)
+Body:
+Lead accepted:
+  ID: 4
+  Job ID: 4
+Name: Maria Garcia
+  Category: Electrical
+  Suburb: Sydney 2000
+  Accepted Price: R$ 765,00
+  Original Price: R$ 850,00
+  (Discount Applied)
+  Description: Install new lighting fixtures
+---
+
+
+[2025-04-27 10:37:33 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 2 (Barry)
+Body:
+Lead accepted:
+  ID: 7
+  Job ID: 2
+Name: Barry Allen
+  Category: Plumbing
+  Suburb: Newtown 2072
+  Accepted Price: R$ 451,80
+  Original Price: R$ 502,00
+  (Discount Applied)
+  Description: Fix leaking kitchen tap and replace shower head
+---
+
+
+[2025-04-27 10:44:21 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 2 (Bruce)
+Body:
+Lead accepted:
+  ID: 8
+  Job ID: 2
+Name: Bruce Wayne
+  Category: Hero
+  Suburb: Gothan
+  Accepted Price: R$ 8.560,80
+  Original Price: R$ 9.512,00
+  (Discount Applied)
+  Description: Protect Gothan City
+---
+
+
+[2025-04-27 19:14:04 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 5 (Paul)
+Body:
+Lead accepted:
+  ID: 11
+  Job ID: 5
+Name: Paul
+  Category: Any
+  Suburb: Downtown Chicago
+  Accepted Price: R$ 42,00
+  Description: test
+---
+
+
+[2025-04-27 19:14:24 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 5 (Paul)
+Body:
+Lead accepted:
+  ID: 12
+  Job ID: 5
+Name: Paul
+  Category: Any
+  Suburb: Downtown Chicago
+  Accepted Price: R$ 3.997,80
+  Original Price: R$ 4.442,00
+  (Discount Applied)
+  Description: test
+---
+
+
+[2025-04-27 20:07:25 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 4 (Paul)
+Body:
+Lead accepted:
+  ID: 15
+  Job ID: 4
+Name: Paul
+  Category: adasdsa
+  Suburb: Downtown Chicago
+  Accepted Price: R$ 3.997,80
+  Original Price: R$ 4.442,00
+  (Discount Applied)
+  Description: test
+---
+
+
+[2025-04-27 20:10:49 UTC] Email Sent Simulation:
+To: vendas@test.com
+Subject: Lead Accepted: Job ID 4 (Paul)
+Body:
+Lead accepted:
+  ID: 16
+  Job ID: 4
+Name: Paul
+  Category: adasdsa
+  Suburb: Downtown Chicago
+  Accepted Price: R$ 3.997,80
+  Original Price: R$ 4.442,00
+  (Discount Applied)
+  Description: test
+---
+
+

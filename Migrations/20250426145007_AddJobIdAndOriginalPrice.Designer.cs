@@ -3,6 +3,7 @@ using System;
 using LeadManager.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,71 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeadManager.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250426145007_AddJobIdAndOriginalPrice")]
+    partial class AddJobIdAndOriginalPrice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
-
-            modelBuilder.Entity("Job", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ClientName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DateRequested")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Jobs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "Yanderra 2574",
-                            ClientName = "Bill Smith",
-                            DateRequested = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Address = "Woolooware 2230",
-                            ClientName = "Craig Johnson",
-                            DateRequested = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Address = "Carramar 6031",
-                            ClientName = "Pete Sample",
-                            DateRequested = new DateTime(2024, 9, 5, 0, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Address = "Sydney 2000",
-                            ClientName = "Maria Garcia",
-                            DateRequested = new DateTime(2024, 2, 15, 0, 0, 0, 0, DateTimeKind.Utc)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Address = "Quinns Rocks 6030",
-                            ClientName = "Chris Sanderson",
-                            DateRequested = new DateTime(2023, 8, 30, 0, 0, 0, 0, DateTimeKind.Utc)
-                        });
-                });
 
             modelBuilder.Entity("LeadManager.Models.Lead", b =>
                 {
@@ -134,8 +78,6 @@ namespace LeadManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JobId");
-
                     b.ToTable("Leads");
 
                     b.HasData(
@@ -147,7 +89,7 @@ namespace LeadManager.Migrations
                             Description = "Need to paint 2 aluminum windows and a sliding glass door",
                             Email = "bill@example.com",
                             FirstName = "Bill",
-                            JobId = 1,
+                            JobId = 5577421,
                             LastName = "Smith",
                             OriginalPrice = 62.00m,
                             Phone = "0412345678",
@@ -163,7 +105,7 @@ namespace LeadManager.Migrations
                             Description = "Internal walls 3 colours",
                             Email = "craig@sample.net",
                             FirstName = "Craig",
-                            JobId = 2,
+                            JobId = 5588872,
                             LastName = "Johnson",
                             OriginalPrice = 49.00m,
                             Phone = "0498765432",
@@ -179,7 +121,7 @@ namespace LeadManager.Migrations
                             Description = "Plaster exposed brick walls",
                             Email = "pete@mailinator.com",
                             FirstName = "Pete",
-                            JobId = 3,
+                            JobId = 5141895,
                             LastName = "Sample",
                             OriginalPrice = 526.00m,
                             Phone = "0412345678",
@@ -195,7 +137,7 @@ namespace LeadManager.Migrations
                             Description = "Install new lighting fixtures",
                             Email = "maria@example.com",
                             FirstName = "Maria",
-                            JobId = 4,
+                            JobId = 5121931,
                             LastName = "Garcia",
                             OriginalPrice = 850.00m,
                             Phone = "0422334455",
@@ -211,7 +153,7 @@ namespace LeadManager.Migrations
                             Description = "Two story building conversion",
                             Email = "another.fake@hipmail.com",
                             FirstName = "Chris",
-                            JobId = 5,
+                            JobId = 5121931,
                             LastName = "Sanderson",
                             OriginalPrice = 1532.00m,
                             Phone = "04987654321",
@@ -219,22 +161,6 @@ namespace LeadManager.Migrations
                             Status = 1,
                             Suburb = "Quinns Rocks 6030"
                         });
-                });
-
-            modelBuilder.Entity("LeadManager.Models.Lead", b =>
-                {
-                    b.HasOne("Job", "Job")
-                        .WithMany("Leads")
-                        .HasForeignKey("JobId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Job");
-                });
-
-            modelBuilder.Entity("Job", b =>
-                {
-                    b.Navigation("Leads");
                 });
 #pragma warning restore 612, 618
         }
