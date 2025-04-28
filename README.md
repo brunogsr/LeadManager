@@ -119,7 +119,7 @@ A API não requer autenticação. Use a interface do frontend ou ferramentas com
 *   **Abas:** Alterne entre "Invited" e "Accepted".
 *   **Cards "Invited":**
     *   Exibem: Nome, Data, 📍 Localização, 💼 Categoria, Job ID, Descrição, Preço.
-    *   Possuem botões **Accept** (laranja) e **Decline** (cinza).
+    *   Possuem botões **Accept** e **Decline**.
 *   **Cards "Accepted":**
     *   Exibem: Nome Completo, Data, 📍 Localização, 💼 Categoria, Job ID, 📞 Telefone, ✉️ Email, Descrição, Preço Final.
 
@@ -145,6 +145,7 @@ A API não requer autenticação. Use a interface do frontend ou ferramentas com
     *   _Teste:_ Comparar com a aba "Accepted" no frontend.
 
 *   **`POST /api/lead`**
+    *   obs: Rota criada apenas para facilitar testes, recomendado uso no Postman
     *   _Função:_ Cria um novo lead (status "Invited").
     *   _Requisito:_ `jobId` no corpo JSON deve ser um ID válido da tabela `Jobs` (1-5 do seed).
     *   _Teste:_ Enviar JSON, verificar resposta `201 Created`, atualizar frontend para ver o novo lead.
